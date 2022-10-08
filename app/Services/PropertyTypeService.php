@@ -5,7 +5,6 @@ namespace App\Services;
 use App\Repositories\PropertyTypeRepository;
 use Exception;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class PropertyTypeService
 {
@@ -17,7 +16,7 @@ class PropertyTypeService
     }
 
     /**
-     * Function to fetch Property list
+     * Function to fetch Property Type list
      * @param $request
      */
 
