@@ -127,8 +127,8 @@ class PropertyService
     public function deleteImage($id) {
         $porperty = $this->show($id);
         if(!empty($porperty)) {
-            $image = public_path('storage/images/').$porperty->image;
-            $thumbnail = public_path('storage/images/thumbnail/').$porperty->thumbnail;
+            $image = public_path($porperty->image);
+            $thumbnail = public_path($porperty->thumbnail);
 
             if(file_exists($image)){
                 @unlink($image);    
