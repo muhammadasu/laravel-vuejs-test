@@ -91,6 +91,7 @@ class PropertyService
         Log::info('PropertyService | update', $request->all());
         $params = $this->propertyRequest($request);
         unset($params['uuid']);
+        unset($params['source']);
 
         if($request->hasFile('image')){
             $this->deleteImage($request->id);

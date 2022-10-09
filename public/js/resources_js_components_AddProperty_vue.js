@@ -629,8 +629,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
-    Promise.all([this.fetchProperty(), this.fetchPropertyTypes()]); // this.fetchProperty();
-    // this.fetchPropertyTypes();
+    if (this.$route.name == 'add-property' || this.$route.name == 'edit-property') {
+      if (this.$route.name == 'add-property') {
+        this.fetchPropertyTypes();
+      } else {
+        Promise.all([this.fetchProperty(), this.fetchPropertyTypes()]);
+      }
+    } else {
+      this.fetchProperty();
+    }
   }
 });
 
